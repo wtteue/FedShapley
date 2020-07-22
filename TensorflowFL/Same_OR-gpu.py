@@ -4,7 +4,8 @@ import tensorflow.compat.v1 as tf
 import numpy as np
 import time
 from scipy.special import comb, perm
-import tensorflow as tfo
+from tensorflow.python.client import device_lib
+
 
 import os
 
@@ -292,7 +293,8 @@ if __name__ == "__main__":
     start_time = time.time()
 
     assert tfo.test.is_gpu_available()
-    assert tfo.test.is_built_with_cuda()
+     print(device_lib.list_local_devices())
+    #assert tfo.test.is_built_with_cuda()
     #data_num = np.asarray([5923,6742,5958,6131,5842])
     #agents_weights = np.divide(data_num, data_num.sum())
 
