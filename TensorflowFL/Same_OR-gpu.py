@@ -15,8 +15,7 @@ import os
 BATCH_SIZE = 100
 NUM_AGENT = 5
 
-with tf.Session() as sess:
-  devices = sess.list_devices()
+
 
 def get_data_for_digit(source, digit):
     output_sequence = []
@@ -292,6 +291,8 @@ def PowerSetsBinary(items):
 if __name__ == "__main__":
     start_time = time.time()
 
+    with tf.Session() as sess:
+      devices = sess.list_devices()
     #data_num = np.asarray([5923,6742,5958,6131,5842])
     #agents_weights = np.divide(data_num, data_num.sum())
 
