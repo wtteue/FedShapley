@@ -291,8 +291,6 @@ def PowerSetsBinary(items):
 
 if __name__ == "__main__":
     start_time = time.time()
-
-    assert tfo.test.is_gpu_available()
     print(device_lib.list_local_devices())
     #assert tfo.test.is_built_with_cuda()
     #data_num = np.asarray([5923,6742,5958,6131,5842])
