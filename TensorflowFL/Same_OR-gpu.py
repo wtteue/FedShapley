@@ -291,8 +291,8 @@ def PowerSetsBinary(items):
 if __name__ == "__main__":
     start_time = time.time()
 
-    with tfo.Session() as sess:
-      devices = sess.list_devices()
+    assert tfo.test.is_gpu_available()
+    assert tfo.test.is_built_with_cuda()
     #data_num = np.asarray([5923,6742,5958,6131,5842])
     #agents_weights = np.divide(data_num, data_num.sum())
 
